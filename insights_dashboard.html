@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Insights Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Insights Dashboard</h1>
+        <p class="lead text-center">Explore interactive visualizations categorized into meaningful insights.</p>
+
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs" id="insightsTabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" id="housing-tab" data-toggle="tab" href="#housing" role="tab">Housing Affordability</a></li>
+            <li class="nav-item"><a class="nav-link" id="economic-tab" data-toggle="tab" href="#economic" role="tab">Economic Disparities</a></li>
+            <li class="nav-item"><a class="nav-link" id="poverty-tab" data-toggle="tab" href="#poverty" role="tab">Poverty & Income Trends</a></li>
+            <li class="nav-item"><a class="nav-link" id="gender-tab" data-toggle="tab" href="#gender" role="tab">Gender Wage Gap</a></li>
+        </ul>
+
+        <!-- Tabs Content -->
+        <div class="tab-content mt-4">
+            <!-- Housing Affordability -->
+            <div class="tab-pane fade show active" id="housing" role="tabpanel">
+                <h3>Housing Affordability</h3>
+
+                <h4>1. Housing Prices vs. Median Income by State</h4>
+                <p>This scatter plot shows the relationship between average housing prices and median incomes for various U.S. states. The data comes from national housing reports and census records, providing insights into income and housing affordability. This visualization highlights disparities across regions, reflecting both demand-supply dynamics and regional economic strengths or weaknesses.<br>
+                <strong>Key Insights:</strong><br>
+                1) Affordability Disparity: States like Maryland exhibit significantly higher housing prices relative to income levels, indicating potential affordability issues for residents.<br>
+                2) Income Variability: States with higher median incomes (>$80k) still show broad variation in housing prices. For example, states like California exhibit much higher prices despite higher incomes. <br>
+                3) Outliers: States such as California display extreme housing costs, likely driven by demand pressures, limited housing supply, and regional economic activity.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig1_housing_vs_income.html" height="600" width="1000"></iframe>
+                </div>
+
+                <h4>2. Average Housing Prices by State</h4>
+                <p>This heatmap visualizes average housing prices across states. Data comes from real estate databases and housing market analyses. This map highlights geographic disparities in housing affordability<br>
+                <strong>Key Insights:</strong><br>
+                1) High-Cost Coastal States: California and northeastern states have extreme housing prices, often surpassing $1 million in urban centers.<br>
+                2) Affordable Midwest and South: States in the Midwest and South generally exhibit lower housing prices, correlating with lower demand and incomes.<br>
+                3) Puerto Rico: Though housing prices are moderate, income disparities pose significant affordability challenges. </p>
+                <div class="text-center my-4">
+                    <iframe src="./fig4_avg_price_heatmap.html" height="600" width="1000"></iframe>
+                </div>
+            </div>
+
+            <!-- Economic Disparities -->
+            <div class="tab-pane fade" id="economic" role="tabpanel">
+                <h3>Economic Disparities</h3>
+
+                <h4>3. Comparison of Median Wages Across Demographic Groups</h4>
+                <p>This box plot compares median wages for White, Black, and Hispanic demographic groups. Wage data originates from the U.S. Bureau of Labor Statistics (BLS), offering insights into income inequality across racial demographics. The visualization focuses on systemic wage disparities.<br>
+                <strong>Key Insights:</strong><br>
+                1) Wage Gaps: White individuals demonstrate higher median wages, reflecting systemic wage inequality across racial lines.<br>
+                2) Low Variability: Hispanic and Black wage distributions show narrower ranges, indicating fewer high-wage opportunities compared to White groups.<br>
+                3) Income Overlap: Minimal overlap between wage ranges for White individuals and other groups highlights clear systemic barriers.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig2_median_wages_boxplot.html" height="600" width="1000"></iframe>
+                </div>
+
+                <h4>4. Median Wages Over Time by Demographic Group</h4>
+                <p>This line chart tracks the trends in median wages for White, Black, and Hispanic individuals since the 1970s.The data draws from historical wage reports and census data. This chart reflects long-term income growth disparities between racial groups.<br>
+                <strong>Key Insights:</strong><br>
+                1) Consistent Disparity: White individuals have consistently earned higher median wages than Black and Hispanic counterparts.<br>
+                2) Stagnant Growth: Black and Hispanic wages show sluggish growth, especially compared to the sharper upward trends for White individuals.<br>
+                3) Post-2000 Growth: While all groups experienced wage increases after 2000, wage gaps remain persistent.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig3_wages_over_time.html" height="600" width="1000"></iframe>
+                </div>
+            </div>
+
+            <!-- Poverty and Income Trends -->
+            <div class="tab-pane fade" id="poverty" role="tabpanel">
+                <h3>Poverty and Income Trends</h3>
+
+                <h4>5. Poverty Rate vs. Median Income by State</h4>
+                <p>This scatter plot explores the relationship between poverty rates and median income. The data integrates poverty statistics from government poverty assessments and income surveys.<br>
+                <strong>Key Insights:</strong><br>
+                1) Negative Correlation: States with lower median incomes tend to have higher poverty rates, showcasing a strong inverse relationship.<br>
+                2) Outliers: States like Georgia demonstrate higher poverty rates despite not having the lowest incomes, pointing to systemic local challenges.<br>
+                3) Low-Poverty States: States with incomes above $100k (e.g., Massachusetts) show poverty rates consistently below 10%.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig5_poverty_income_scatter.html" height="600" width="1000"></iframe>
+                </div>
+
+                <h4>6. Poverty Rate vs. Housing Prices by State</h4>
+                <p>This scatter plot investigates how housing prices relate to poverty rates across states. Data combines poverty statistics and real estate price averages to explore affordability and economic well-being.<br>
+                <strong>Key Insights:</strong><br>
+                1) Inverse Trend: States with lower housing prices often exhibit higher poverty rates, such as Mississippi and Louisiana.<br>
+                2) Outliers: Despite relatively lower housing costs, Puerto Rico and Mississippi report some of the highest poverty rates in the nation.<br>
+                3) High-Price States: States like California and Massachusetts show that higher housing prices often align with lower poverty rates, indicating robust local economies.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig7_poverty_vs_prices.html" height="600" width="1000"></iframe>
+                </div>
+
+                <h4>7. Economic Inequality: Poverty, Housing Prices, and Income by State</h4>
+                <p>This bubble chart integrates poverty rates, housing prices, and median incomes.This chart provides a multi-variable view to explore economic inequality across states, using data from housing reports and poverty surveys.<br>
+                <strong>Key Insights:</strong><br>
+                1) High Poverty, Low Housing Prices: States like Mississippi and Louisiana demonstrate both high poverty rates and low housing prices.<br>
+                2) Wealthy States: Larger bubbles in states like California reflect high incomes, lower poverty rates, and elevated housing prices.<br>
+                3) Variability in Middle-Income States: States with incomes in the $40k-$60k range show significant disparities in housing affordability and poverty.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig8_economic_inequality_bubble.html" height="600" width="1000"></iframe>
+                </div>
+            </div>
+
+            <!-- Gender Wage Gap -->
+            <div class="tab-pane fade" id="gender" role="tabpanel">
+                <h3>Gender Wage Gap</h3>
+
+                <h4>8. Gender Wage Gap by State</h4>
+                <p>This heatmap visualizes gender wage disparities across all U.S. states.The data is sourced from labor market surveys highlighting the differences between male and female earnings.<br>
+                <strong>Key Insights:</strong><br>
+                1) Significant Wage Gaps: Northern states like Wyoming and North Dakota exhibit substantial wage gaps, favoring men.<br>
+                2) Moderate Trends Nationwide: Most states reveal annual wage gaps ranging from $200 to $700.<br>
+                3) Exceptions in Eastern States: Certain Eastern states display a reversal, where women marginally out-earn men, likely driven by higher female labor participation in key sectors.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig6_gender_wage_gap.html" height="600" width="1000"></iframe>
+                </div>
+
+                <h4>9. Income Trends Over Time by Demographic Groups</h4>
+                <p>This line chart explores gender-based income trends across racial demographics. Wage data from historical BLS reports highlights long-term gender and racial wage disparities.<br>
+                <strong>Key Insights:</strong><br>
+                1) Persistent Gender Disparities: Across all racial groups, men consistently earn more than women.<br>
+                2) Racial Inequality: White men and women consistently earn more than their Black and Hispanic counterparts.<br>
+                3) White Female Growth: White women show the steepest wage growth since the 1970s, widening the gender wage gap relative to other groups.</p>
+                <div class="text-center my-4">
+                    <iframe src="./fig9_income_trends.html" height="600" width="1000"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>&copy; 2024 Insights Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
